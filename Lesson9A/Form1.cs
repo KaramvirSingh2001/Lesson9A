@@ -12,62 +12,45 @@ namespace Lesson9A
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// This is the constructor method
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void ResultLabel_Click(object sender, EventArgs e)
-        {
 
+        /// <summary>
+        /// this is the shared ecent handler for all of the calculator buttons click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CalculatorNumbers_Click(object sender, EventArgs e)
+        {
+            Button selectedButton = sender as Button;
+
+
+            try
+            {
+                int.Parse(selectedButton.Text);
+                ResultLabel.Text = selectedButton.Text;
+            }
+            catch
+            {
+                ResultLabel.Text = "Not a number";
+            }
+            //switch (selectedButton.Text)
+            //{
+            //    case "1":
+            //        ResultLabel.Text = "1";
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
 
-        private void SevenButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ZeroButton_Click(object sender, EventArgs e)
+        private void NumberButtonTableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
